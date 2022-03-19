@@ -1,0 +1,9 @@
+ユーザー名: admin
+メールアドレス: admin@example.com
+Password: adminpassword
+
+
+(第8回)
+ユーザー名: test
+メールアドレス: test@example.com
+Password: testpassword

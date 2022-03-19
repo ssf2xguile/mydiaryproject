@@ -1,0 +1,38 @@
+【第4回】Djangoで日記アプリを作ろう ～一覧画面・詳細画面編～
+で起こるエラーの対処法
+
+エラーメッセージ↓
+	return database_name == ':memory:' or 'mode=memory' in database_name
+TypeError: argument of type 'WindowsPath' is not iterable
+
+対処法↓
+setting.pyのデータベースの部分を変更する必要がある。
+
+'NAME': BASE_DIR / 'db.sqlite3',
+この部分を変更する。
+
+'NAME': str(BASE_DIR / 'db.sqlite3'),
+
+
+【第8回】Djangoで日記アプリを作ろう～認証機能実装編～ 
+で起こるエラーの対処法
+
+エラーメッセージ1↓
+django.db.migrations.exceptions.InconsistentMigrationHistory: 
+Migration admin.0001_initial is applied before its dependency accounts.0001_initial on database 'default'.
+
+対処法1↓
+adminをコメントアウトする必要がある。
+
+エラーメッセージ2↓
+ModuleNotFoundError: No module named 'allauth'
+
+対処法2↓
+python -m pip install django-allauth
+
+
+
+参考サイト
+1. https://qiita.com/ryuunosuke0905/items/1134eb4ed29cc249a74d
+2. https://note.com/mihami383/n/nb58eec166df6
+3. https://stackoverflow.com/questions/63260580/how-to-fix-this-error-no-module-named-allauth
